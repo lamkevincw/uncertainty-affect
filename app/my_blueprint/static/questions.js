@@ -350,7 +350,7 @@ const questions = {
                 "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
             },
             "correctAnswer": "",
-            "image": ["animated1.png"],
+            "image": ["animated1.gif"],
             "type": "affective",
             "orderGroup": 3,
             "RQ": 1
@@ -363,7 +363,7 @@ const questions = {
                 "values": []
             },
             "correctAnswer": "",
-            "image": ["animated1.png"],
+            "image": ["animated1.gif"],
             "type": "affective",
             "orderGroup": 3,
             "RQ": 1
@@ -390,7 +390,7 @@ const questions = {
                 "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
             },
             "correctAnswer": "",
-            "image": ["animated3.png"],
+            "image": ["animated3.gif"],
             "type": "affective",
             "orderGroup": 3,
             "RQ": 1
@@ -403,7 +403,7 @@ const questions = {
                 "values": []
             },
             "correctAnswer": "",
-            "image": ["animated3.png"],
+            "image": ["animated3.gif"],
             "type": "affective",
             "orderGroup": 3,
             "RQ": 1

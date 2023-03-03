@@ -5,8 +5,8 @@
 	"questions": [
 		{
 		    "questiontype": "textview",
-			"instructions": "Use the images of the visualization types to answer the next TWO following questions.",
-			"text": "Type A <img style='width: 100%' src='/my_blueprint/images/texture-dots-instruct.png'>\n\nType B<img style='width: 100%' src='/my_blueprint/images/texture-cross-instruct.png'>"
+			"instructions": "Use the images of the visualization types to answer the next THREE following questions.",
+			"text": "Type A <img style='width: 100%' src='/my_blueprint/images/texture-instruct.png'>\n\nType B<img style='width: 100%' src='/my_blueprint/images/hsv-instruct.png'>\n\nType C<img style='width: 100%' src='/my_blueprint/images/vsup-instruct.png'>\n\nType D<img style='width: 100%' src='/my_blueprint/images/static-instruct.png'>\n\nType E<img style='width: 100%' src='/my_blueprint/images/animated-instruct.gif'><br>Type F<img style='width: 100%' src='/my_blueprint/images/multiples-instruct.png'><br>Type G<img style='width: 100%' src='/my_blueprint/images/separate-instruct.png'>"
 		},
 		{
 		    "questiontype": "radiolist",
@@ -16,7 +16,12 @@
 			"required": true,
 			"labels": [
 				"Type A",
-				"Type B"
+				"Type B",
+				"Type C",
+				"Type D",
+				"Type E",
+				"Type F",
+				"Type G"
 		    ]
 		},
 		{
@@ -27,8 +32,20 @@
 			"required": true,
 			"labels": [
 				"Type A",
-				"Type B"
+				"Type B",
+				"Type C",
+				"Type D",
+				"Type E",
+				"Type F",
+				"Type G"
 		    ]
+		},
+		{
+			"questiontype": "field",
+			"instructions": "Please rank the above visualization types (A to G) from MOST liked/preferred to LEAST liked/preferred.",
+			"placeholder": "(e.g., A, B, C, D, E, F, G)",
+			"id": "visRanking",
+			"required": false
 		},
 		{
 		    "questiontype": "radiolist",
