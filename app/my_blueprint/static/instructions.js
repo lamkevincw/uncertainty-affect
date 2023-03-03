@@ -9,16 +9,52 @@ const instructionText = {
     },
     "visPage": [
         {
-            "name": "Texture - Dots",
-            "text": "This visualization type uses colour and texture to differentiate between the concentration of the pollutants and the certainty of the pollution model.\n\nDifferent colours are used to distinguish between the levels of concentration, while textures (e.g., dotting) show the different degrees of certainty.\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
+            "name": "Texture",
+            "text": "This visualization type uses colour and texture to differentiate between the concentration of the pollutants and the certainty of the pollution model.\n\nDifferent colours are used to distinguish between the levels of concentration, while textures (e.g., crosshatching, dotting) show the different degrees of certainty.\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
             "img-1": "vis-baseline.png",
-            "img-2": "texture-dots-instruct.png"
+            "img-2": "texture-instruct.png"
         },
         {
-            "name": "Texture - Cross-hatch",
-            "text": "This visualization type uses colour and texture to differentiate between the concentration of the pollutants and the certainty of the pollution model.\n\nDifferent colours are used to distinguish between the levels of concentration, while textures (e.g., cross-hatching) show the different degrees of certainty.\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
+            "name": "HSV",
+            "text": "This visualization type uses colour value (i.e., the hue of the colour, such as red, green, or blue) and colour saturation (on a scale from grey to pure colour) to differentiate between the concentration of the pollutants and the certainty of the pollution model.\n\nThe value of the colour shows the level of concentration: for example, a red colour indicates high concentration. The saturation shows the level of certainty: for example, a greyish red indicates high concentration but low certainty.\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
             "img-1": "vis-baseline.png",
-            "img-2": "texture-cross-instruct.png"
+            "img-2": "hsv-instruct.png"
+        },
+        {
+            "name": "VSUP",
+            "text": "This visualization type uses a value-suppressing uncertainty palette to show both pollutant contamination and certainty of the predictive model. A value-suppressing uncertainty palette maps both the pollutant contamination concentration and certainty of the predictive model to an output colour, with a greater ranger of colours reserved for more certain values. As concentration increases, the colour value changes. As the contamination concentration becomes less certain, there are fewer potential colours. Concentration values are split into more colours when the certainty is high, and fewer colours when the certainty is low.\n\nFor example, a high concentration prediction and a medium concentration prediction will have two different colours if they are nearby a sensor, as the certainty will be high. If the concentration predictions are further from a sensor, both predictions may be mapped to the same colour.\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
+            "img-1": "vis-baseline.png",
+            "img-2": "vsup-instruct.png"
+        },
+        {
+            "name": "Static",
+            "text": "This visualization type uses a modeling algorithm to predict the extent of pollutants at a location. All the predicted areas of concentration are overlaid onto a static map at the same time."
+            + "\n\nThe model makes a prediction of the polluted area at three different concentration levels: high, medium, and low. Multiple predictions of the model are made at each concentration level, and the results are overlaid on the map all at once in a static image."
+            + "\n\nIndividual model outcomes are represented with grey lines at various concentrations. Summary lines are used to indicate the average model prediction at each concentration level: a red line for the high concentration area, an orange line for the medium concentration area, and a yellow line for the low concentration area."
+            + "\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
+            "img-1": "vis-baseline.png",
+            "img-2": "static-instruct.png"
+        },
+        {
+            "name": "Animated",
+            "text": "This visualization type uses a modeling algorithm to predict the extent of pollutants at a location. An animation is used to show the different areas of pollutant concentration that are predicted by the model."
+                + "\n\nThe model makes a prediction of the polluted area at three different concentration levels: high, medium, and low. Multiple predictions of the model are made at each concentration level, and the results are animated onto the map one line at a time. Each individual line appears one by one in the visualization, followed by a coloured summary line that shows the mean of the lines at that concentration level."
+                + "\n\nIndividual model outcomes are represented with grey lines at various concentrations. Summary lines are used to indicate the average model prediction at each concentration level: a red line for the high concentration area, an orange line for the medium concentration area, and a yellow line for the low concentration area."
+                + "\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
+            "img-1": "vis-baseline.png",
+            "img-2": "animated-instruct.gif"
+        },
+        {
+            "name": "Multiples",
+            "text": "This visualization type uses a modelling algorithm to predict the extent of pollutants at a location. The visualization shows several outcomes of the model while using different sets of parameters. Different outcomes of the model are shown simultaneously in a grid.\n\nEach of the nine images shows a different area that is based on different settings of the model's parameters; taken together, the images show the full range of what the model predicts.\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
+            "img-1": "vis-baseline.png",
+            "img-2": "multiples-instruct.png"
+        },
+        {
+            "name": "Separate",
+            "text": "This visualization type uses side-by-side visualizations of the same location to differentiate between the concentration of the pollutants and the certainty of the pollution model.\n\nThe left image shows the level of concentration, and the right image shows the degree of certainty.\n\nYou may now choose to take a short break before proceeding to the questions with the Continue button.",
+            "img-1": "vis-baseline.png",
+            "img-2": "separate-instruct.png"
         }
     ],
     "questionPage": {
