@@ -1,234 +1,7 @@
 const questions = {
-    "texture-dots": [
-        // Reading vis questions
+    "texture": [
         {
             "id": 1,
-            "question": "What is the degree of certainty at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "Medium",
-            "image": ["texture-edit1.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 2,
-            "question": "What is the degree of certainty at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "High",
-            "image": ["texture-edit2.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 3,
-            "question": "What is the degree of certainty at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "Low",
-            "image": ["texture-edit3.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        // Reading vis concentration questions
-        {
-            "id": 4,
-            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "High",
-            "image": ["texture-edit4.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 5,
-            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "Low",
-            "image": ["texture-edit5.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 6,
-            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "Medium",
-            "image": ["texture-edit6.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 7,
-            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "Very Low",
-            "image": ["texture-edit7.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1
-        },
-        // Interpreting vis questions
-        {
-            "id": 8,
-            "question": "What is the likelihood that the blue X-marked location has a medium concentration of pollutants?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Unlikely", "Unlikely", "Slightly Unlikely", "Neutral", "Slightly Likely", "Likely", "Very Likely"]
-            },
-            "correctAnswer": "Neutral",
-            "image": ["texture-edit1.png"],
-            "type": "subjective",
-            "orderGroup": 2,
-            "RQ": 1
-        },
-        {
-            "id": 9,
-            "question": "What is the likelihood that the blue X-marked location has a low concentration of pollutants?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Unlikely", "Unlikely", "Slightly Unlikely", "Neutral", "Slightly Likely", "Likely", "Very Likely"]
-            },
-            "correctAnswer": "Likely",
-            "image": ["texture-edit5.png"],
-            "type": "subjective",
-            "orderGroup": 2,
-            "RQ": 1
-        },
-        {
-            "id": 10,
-            "question": "What is the likelihood that the blue X-marked location has a low concentration of pollutants?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Unlikely", "Unlikely", "Slightly Unlikely", "Neutral", "Slightly Likely", "Likely", "Very Likely"]
-            },
-            "correctAnswer": "Unlikely",
-            "image": ["texture-edit3.png"],
-            "type": "subjective",
-            "orderGroup": 2,
-            "RQ": 1
-        },
-        {
-            "id": 11, // Unique ID to associate participant responses to corresponding question
-            "question": "Click on the location of the map where concentration is highest. The reset button will clear the marker.", // Question text
-            "answers": {
-                "type": "click", // Answer type (click, multiple, multiple-text, range, text, draw); click creates a target on the user's last mousedown position
-                "values": [] // Possible answers that user can choose from; only used for multiple/multiple-text (i.e., choices) and range (i.e, min, max)
-            },
-            "correctAnswer": "",
-            "image": ["texture1.png"], // Associated image; can be multiple images, but it will be easier to display correctly if using only one image file
-            "type": "technical", // Type of question: technical (i.e., has correct answer) or subjective
-            "orderGroup": 1, // Questions grouped based on value; lower values will be shown first, same values will be randomized; sort of like z-values
-            "RQ": 1, // The research question that this question is trying to help answer
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 12, // Unique ID to associate participant responses to corresponding question
-            "question": "Click on the location of the map where concentration is highest. The reset button will clear the marker.", // Question text
-            "answers": {
-                "type": "click", // Answer type (click, multiple, multiple-text, range, text, draw); click creates a target on the user's last mousedown position
-                "values": [] // Possible answers that user can choose from; only used for multiple/multiple-text (i.e., choices) and range (i.e, min, max)
-            },
-            "correctAnswer": "",
-            "image": ["texture2.png"], // Associated image; can be multiple images, but it will be easier to display correctly if using only one image file
-            "type": "technical", // Type of question: technical (i.e., has correct answer) or subjective
-            "orderGroup": 1, // Questions grouped based on value; lower values will be shown first, same values will be randomized; sort of like z-values
-            "RQ": 1, // The research question that this question is trying to help answer
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 13, // Unique ID to associate participant responses to corresponding question
-            "question": "Click on the location of the map where concentration is highest. The reset button will clear the marker.", // Question text
-            "answers": {
-                "type": "click", // Answer type (click, multiple, multiple-text, range, text, draw); click creates a target on the user's last mousedown position
-                "values": [] // Possible answers that user can choose from; only used for multiple/multiple-text (i.e., choices) and range (i.e, min, max)
-            },
-            "correctAnswer": "",
-            "image": ["texture3.png"], // Associated image; can be multiple images, but it will be easier to display correctly if using only one image file
-            "type": "technical", // Type of question: technical (i.e., has correct answer) or subjective
-            "orderGroup": 1, // Questions grouped based on value; lower values will be shown first, same values will be randomized; sort of like z-values
-            "RQ": 1, // The research question that this question is trying to help answer
-            "notes": "Texture/Colour"
-        },
-    ],
-    "texture-cross": [
-        // Reading vis questions
-        {
-            "id": 14,
-            "question": "What is the degree of certainty at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "High",
-            "image": ["texture-edit8.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 15,
-            "question": "What is the degree of certainty at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "Low",
-            "image": ["texture-edit9.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        {
-            "id": 16,
-            "question": "What is the degree of certainty at the blue X-marked location?",
-            "answers": {
-                "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
-            },
-            "correctAnswer": "Medium",
-            "image": ["texture-edit10.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
-        },
-        // Reading vis concentration questions
-        {
-            "id": 17,
             "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
             "answers": {
                 "type": "multiple",
@@ -242,21 +15,33 @@ const questions = {
             "notes": "Texture/Colour"
         },
         {
-            "id": 18,
-            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "id": 2, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
             "answers": {
                 "type": "multiple",
-                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
             },
-            "correctAnswer": "High",
-            "image": ["texture-edit12.png"],
-            "type": "technical",
-            "orderGroup": 1,
-            "RQ": 1,
-            "notes": "Texture/Colour"
+            "correctAnswer": "",
+            "image": ["texture4.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
         },
         {
-            "id": 19,
+            "id": 3, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["texture4.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 4,
             "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
             "answers": {
                 "type": "multiple",
@@ -270,99 +55,524 @@ const questions = {
             "notes": "Texture/Colour"
         },
         {
-            "id": 20,
+            "id": 5, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["texture6.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 6, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["texture6.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+    ],
+    "hsv": [
+        {
+            "id": 7,
             "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
             "answers": {
                 "type": "multiple",
                 "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
             },
             "correctAnswer": "Very Low",
-            "image": ["texture-edit14.png"],
+            "image": ["hsv-edit2.png"],
             "type": "technical",
             "orderGroup": 1,
-            "RQ": 1
+            "RQ": 1,
+            "notes": "HSV"
         },
-        // Interpreting vis questions
         {
-            "id": 21,
-            "question": "What is the likelihood that the blue X-marked location has a low concentration of pollutants?",
+            "id": 8, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
             "answers": {
                 "type": "multiple",
-                "values": ["Very Unlikely", "Unlikely", "Slightly Unlikely", "Neutral", "Slightly Likely", "Likely", "Very Likely"]
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
             },
-            "correctAnswer": "Neutral",
-            "image": ["texture-edit10.png"],
-            "type": "subjective",
-            "orderGroup": 2,
+            "correctAnswer": "",
+            "image": ["hsv1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 9, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["hsv1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 10,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "High",
+            "image": ["hsv-edit6.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "HSV"
+        },
+        {
+            "id": 11, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["hsv3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 12, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["hsv3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+    ],
+    "vsup": [
+        {
+            "id": 13,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "Somewhat Low",
+            "image": ["vsup-edit1.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "VSUP"
+        },
+        {
+            "id": 14, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["vsup1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 15, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["vsup1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 16,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "Somewhat High",
+            "image": ["vsup-edit3.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "VSUP"
+        },
+        {
+            "id": 17, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["vsup3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 18, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["vsup3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+    ],
+    "static": [
+        {
+            "id": 19,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "Medium",
+            "image": ["static-edit1.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Static"
+        },
+        {
+            "id": 20, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["static1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 21, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["static1.png"],
+            "type": "affective",
+            "orderGroup": 3,
             "RQ": 1
         },
         {
             "id": 22,
-            "question": "What is the likelihood that the blue X-marked location has a medium concentration of pollutants?",
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
             "answers": {
                 "type": "multiple",
-                "values": ["Very Unlikely", "Unlikely", "Slightly Unlikely", "Neutral", "Slightly Likely", "Likely", "Very Likely"]
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
             },
-            "correctAnswer": "Likely",
-            "image": ["texture-edit8.png"],
-            "type": "subjective",
-            "orderGroup": 2,
+            "correctAnswer": "Medium",
+            "image": ["static-edit3.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Static"
+        },
+        {
+            "id": 23, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["static3.png"],
+            "type": "affective",
+            "orderGroup": 3,
             "RQ": 1
         },
         {
-            "id": 23,
-            "question": "What is the likelihood that the blue X-marked location has a medium concentration of pollutants?",
+            "id": 24, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["static3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+    ],
+    "animated": [
+        {
+            "id": 25,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
             "answers": {
                 "type": "multiple",
-                "values": ["Very Unlikely", "Unlikely", "Slightly Unlikely", "Neutral", "Slightly Likely", "Likely", "Very Likely"]
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
             },
-            "correctAnswer": "Unlikely",
-            "image": ["texture-edit9.png"],
-            "type": "subjective",
-            "orderGroup": 2,
+            "correctAnswer": "Low",
+            "image": ["animated-edit1.gif"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Animated"
+        },
+        {
+            "id": 26, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["animated1.png"],
+            "type": "affective",
+            "orderGroup": 3,
             "RQ": 1
         },
         {
-            "id": 24, // Unique ID to associate participant responses to corresponding question
-            "question": "Click on the location of the map where concentration is highest. The reset button will clear the marker.", // Question text
+            "id": 27, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
             "answers": {
-                "type": "click", // Answer type (click, multiple, multiple-text, range, text, draw); click creates a target on the user's last mousedown position
-                "values": [] // Possible answers that user can choose from; only used for multiple/multiple-text (i.e., choices) and range (i.e, min, max)
+                "type": "SAMaffect",
+                "values": []
             },
             "correctAnswer": "",
-            "image": ["texture4.png"], // Associated image; can be multiple images, but it will be easier to display correctly if using only one image file
-            "type": "technical", // Type of question: technical (i.e., has correct answer) or subjective
-            "orderGroup": 1, // Questions grouped based on value; lower values will be shown first, same values will be randomized; sort of like z-values
-            "RQ": 1, // The research question that this question is trying to help answer
-            "notes": "Texture/Colour"
+            "image": ["animated1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
         },
         {
-            "id": 25, // Unique ID to associate participant responses to corresponding question
-            "question": "Click on the location of the map where concentration is highest. The reset button will clear the marker.", // Question text
+            "id": 28,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
             "answers": {
-                "type": "click", // Answer type (click, multiple, multiple-text, range, text, draw); click creates a target on the user's last mousedown position
-                "values": [] // Possible answers that user can choose from; only used for multiple/multiple-text (i.e., choices) and range (i.e, min, max)
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
             },
-            "correctAnswer": "",
-            "image": ["texture5.png"], // Associated image; can be multiple images, but it will be easier to display correctly if using only one image file
-            "type": "technical", // Type of question: technical (i.e., has correct answer) or subjective
-            "orderGroup": 1, // Questions grouped based on value; lower values will be shown first, same values will be randomized; sort of like z-values
-            "RQ": 1, // The research question that this question is trying to help answer
-            "notes": "Texture/Colour"
+            "correctAnswer": "High",
+            "image": ["animated-edit3.gif"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Animated"
         },
         {
-            "id": 26, // Unique ID to associate participant responses to corresponding question
-            "question": "Click on the location of the map where concentration is highest. The reset button will clear the marker.", // Question text
+            "id": 29, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
             "answers": {
-                "type": "click", // Answer type (click, multiple, multiple-text, range, text, draw); click creates a target on the user's last mousedown position
-                "values": [] // Possible answers that user can choose from; only used for multiple/multiple-text (i.e., choices) and range (i.e, min, max)
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
             },
             "correctAnswer": "",
-            "image": ["texture6.png"], // Associated image; can be multiple images, but it will be easier to display correctly if using only one image file
-            "type": "technical", // Type of question: technical (i.e., has correct answer) or subjective
-            "orderGroup": 1, // Questions grouped based on value; lower values will be shown first, same values will be randomized; sort of like z-values
-            "RQ": 1, // The research question that this question is trying to help answer
-            "notes": "Texture/Colour"
+            "image": ["animated3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 30, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["animated3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        
+    ],
+    "multiples": [
+        {
+            "id": 31,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "Medium",
+            "image": ["multiples-edit1.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Multiples"
+        },
+        {
+            "id": 32, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["multiples1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 33, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["multiples1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 34,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "Somewhat High",
+            "image": ["multiples-edit3.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Multiples"
+        },
+        {
+            "id": 35, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["multiples3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 36, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["multiples3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        
+    ],
+    "separate": [
+        {
+            "id": 37,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "Medium",
+            "image": ["separate-edit1.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Separate"
+        },
+        {
+            "id": 38, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["separate1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 39, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["separate1.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 40,
+            "question": "What is the predicted concentration of the pollutant at the blue X-marked location?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low", "Low", "Somewhat Low", "Medium", "Somewhat High", "High", "Very High"]
+            },
+            "correctAnswer": "Very Low",
+            "image": ["separate-edit5.png"],
+            "type": "technical",
+            "orderGroup": 1,
+            "RQ": 1,
+            "notes": "Separate"
+        },
+        {
+            "id": 41, 
+            "question": "Does this visualization demonstrate a low risk, or a high risk situation?",
+            "answers": {
+                "type": "multiple",
+                "values": ["Very Low Risk", "Low Risk", "Somewhat Low Risk", "Neutral", "Somewhat High Risk", "High Risk", "Very High Risk"]
+            },
+            "correctAnswer": "",
+            "image": ["separate3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
+        },
+        {
+            "id": 42, 
+            "question": "Select the two images (one in each row) that most accurately reflects how you feel regarding the situation represented by the visualization.",
+            "answers": {
+                "type": "SAMaffect",
+                "values": []
+            },
+            "correctAnswer": "",
+            "image": ["separate3.png"],
+            "type": "affective",
+            "orderGroup": 3,
+            "RQ": 1
         },
     ]
 }

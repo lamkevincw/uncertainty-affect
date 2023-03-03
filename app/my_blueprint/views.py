@@ -73,6 +73,36 @@ def interpretationTask1():
 @verify_session_valid
 def interpretationTask2():
     return uncertaintyTask(2)
+
+@my_blueprint.route("/uncertaintyTask3", methods=['POST', 'GET'])
+@verify_correct_page
+@verify_session_valid
+def interpretationTask3():
+    return uncertaintyTask(3)
+
+@my_blueprint.route("/uncertaintyTask4", methods=['POST', 'GET'])
+@verify_correct_page
+@verify_session_valid
+def interpretationTask4():
+    return uncertaintyTask(4)
+
+@my_blueprint.route("/uncertaintyTask5", methods=['POST', 'GET'])
+@verify_correct_page
+@verify_session_valid
+def interpretationTask5():
+    return uncertaintyTask(5)
+
+@my_blueprint.route("/uncertaintyTask6", methods=['POST', 'GET'])
+@verify_correct_page
+@verify_session_valid
+def interpretationTask6():
+    return uncertaintyTask(6)
+
+@my_blueprint.route("/uncertaintyTask7", methods=['POST', 'GET'])
+@verify_correct_page
+@verify_session_valid
+def interpretationTask7():
+    return uncertaintyTask(7)
 	
 # @my_blueprint.route("/interpretationTask2", methods=['POST', 'GET'])
 # @verify_correct_page

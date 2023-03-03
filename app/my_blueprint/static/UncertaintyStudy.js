@@ -7,17 +7,18 @@ const questionTypes = [
     "multiple",
     // "multiple-text",
     // "text",
-    "click",
-    // "mouseover"
+    // "click",
+    // "mouseover",
+    "SAMaffect"
 ];
 const visTypes = {
-    "texture-dots": "A",
-    "texture-cross": "B"
-    // "vsup": "C",
-    // "static": "D",
-    // "animated": "E",
-    // "multiples": "F",
-    // "separate": "G"
+    "texture": "A",
+    "hsv": "B",
+    "vsup": "C",
+    "static": "D",
+    "animated": "E",
+    "multiples": "F",
+    "separate": "G"
 };
 const firstAnimatedID = 13;
 const mouseoverCoords = [
@@ -36,6 +37,8 @@ const affectChart = ["Enraged", "Panicked", "Stressed", "Jittery", "Shocked", "S
     "Alienated", "Miserable", "Lonely", "Disheartened", "Tired", "Relaxed", "Chill", "Restful", "Blessed", "Balanced",
     "Despondent", "Depressed", "Sullen", "Exhausted", "Fatigued", "Mellow", "Thoughtful", "Peaceful", "Comfy", "Carefree",
     "Despair", "Hopeless", "Desolate", "Spent", "Drained", "Sleepy", "Complacent", "Tranquil", "Cozy", "Serene"];
+const valence = ["Very Unhappy", "Unhappy", "Slightly Unhappy", "Neutral", "Slightly Happy", "Happy", "Very Happy"];
+const arousal = ["Very Calm", "Calm", "Somewhat Calm", "Neutral", "Somewhat Intense", "Intense", "Very Intense"];
 
 // HTML variables
 let modal = document.getElementById("instructionsModal");
@@ -306,6 +309,41 @@ function startTrial(qType) {
             table.onclick = selectAffectAnswer;
             document.getElementById("answersForm").append(table);
             break;
+        case "SAMaffect":
+            let samTab = document.createElement("table");
+            let tr0 = samTab.insertRow();
+            let tr1 = samTab.insertRow();
+            for (let j = 1; j < 8; j++) {
+                let tdText = tr0.insertCell();
+                tdText.className = "tableText";
+                tdText.append(document.createTextNode(valence[j - 1]));
+
+                let td = tr1.insertCell();
+                let tdIMG = document.createElement("img");
+                tdIMG.src = window.origin + "/my_blueprint/images/SAMaffect/vp" + j + ".png";
+                td.append(tdIMG);
+                td.style.border = '1px solid black';
+                td.id = "valence" + j;
+            }
+
+            let tr2 = samTab.insertRow();
+            let tr3 = samTab.insertRow();
+            for (let j = 1; j < 8; j++) {
+                let td = tr2.insertCell();
+                let tdIMG = document.createElement("img");
+                tdIMG.src = window.origin + "/my_blueprint/images/SAMaffect/A" + j + ".png";
+                td.append(tdIMG);
+                td.style.border = '1px solid black';
+                td.id = "arousal" + j;
+
+                let tdText = tr3.insertCell();
+                tdText.className = "tableText";
+                tdText.append(document.createTextNode(arousal[j - 1]));
+            }
+
+            samTab.onclick = selectSAMAnswer;
+            document.getElementById("answersForm").append(samTab);
+            break;
     }
     let submitButton = document.createElement("input");
     submitButton.className = "submitButton";
@@ -381,6 +419,12 @@ function endTrial(e) {
                 return;
             }
             break;
+        case "SAMaffect":
+            if (currResponse["userAnswer"] == undefined || currResponse["userAnswer"][0] === "" || currResponse["userAnswer"][1] === "") {
+                alert("Please make a selection in both rows before submitting.");
+                return;
+            }
+            break;
     }
     currResponse["completionTime"] = (new Date().getTime()) - trialStartTime;
     currResponse["scrollActions"] = scrollActions;
@@ -409,10 +453,19 @@ function startQuestionBlock(qType) {
     }
     let sortedKeys = Object.keys(questionOrder).sort();
     for (let i = 0; i < sortedKeys.length; i++) {
-        let shuffledOrder = shuffleArray(questionOrder[sortedKeys[i]]);
-        // let shuffledOrder = questionOrder[sortedKeys[i]];
-        for (let j = 0; j < shuffledOrder.length; j++) {
-            studyOrder.push(shuffledOrder[j]);
+        // let shuffledOrder = shuffleArray(questionOrder[sortedKeys[i]]);
+        let shuffledOrder = questionOrder[sortedKeys[i]];
+        if (parseInt(participantID) % 2 == 0) {
+            for (let j = 0; j < shuffledOrder.length; j++) {
+                studyOrder.push(shuffledOrder[j]);
+            }
+        } else {
+            for (let j = shuffledOrder.length / 2; j < shuffledOrder.length; j++) {
+                studyOrder.push(shuffledOrder[j]);
+            }
+            for (let j = 0; j < shuffledOrder.length / 2; j++) {
+                studyOrder.push(shuffledOrder[j]);
+            }
         }
     }
     console.log(studyOrder)
@@ -662,6 +715,31 @@ function getXY(mode, e) {
 //     }
 //     currResponse["userAnswer"] = e.target.textContent;
 // }
+
+function selectSAMAnswer(e) {
+    console.log(e.target)
+    console.log(e.target.parentElement.id)
+    let ans = currResponse["userAnswer"];
+    if (ans == undefined) {
+        ans = ["", ""];
+    }
+    if (e.target.tagName === "IMG") {
+        if (e.target.parentElement.id.substring(0, 1) === "v") {
+            for (let i = 1; i < 8; i++) {
+                document.getElementById("valence" + i).style.border = "1px solid black";
+            }
+            e.target.parentElement.style.border = "3px solid red"
+            ans[0] = e.target.parentElement.id;
+        } else if (e.target.parentElement.id.substring(0, 1) === "a") {
+            for (let i = 1; i < 8; i++) {
+                document.getElementById("arousal" + i).style.border = "1px solid black";
+            }
+            e.target.parentElement.style.border = "3px solid red"
+            ans[1] = e.target.parentElement.id;
+        }
+    }
+    currResponse["userAnswer"] = ans;
+}
 
 function shuffleArray(array) {
     let sorted = array.slice(0);
