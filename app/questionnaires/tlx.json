@@ -5,7 +5,7 @@
 	"questions": [
 		{
 		  "questiontype": "radiogrid",
-		  "instructions": "Please provide a rating on the tasks completed while the guide was available:",
+		  "instructions": "Please provide a rating regarding your experience with the previous set of tasks just completed.",
 		  "id": "nasaTLX",
 		  "shuffle": false,
 		  "required": true,
